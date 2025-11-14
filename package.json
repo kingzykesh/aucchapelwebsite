@@ -18,7 +18,6 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
-    "@next/swc-win32-x64-msvc": "^16.0.3",
     "@tailwindcss/postcss": "^4",
     "autoprefixer": "^10.4.22",
     "eslint": "^8.57.0",

@@ -3,6 +3,7 @@ import ChaplainMessage from "@/components/ChaplainMessage";
 import Calendar from "@/components/Calendar";
 import RecentSermon from "@/components/RecentSermon";
 import Testimonials from "@/components/Testimonials";
+import JoinCommunity from "@/components/JoinCommunity";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <Calendar />
           <RecentSermon />
           <Testimonials />
+           <JoinCommunity />
     </main>
   );
 }
