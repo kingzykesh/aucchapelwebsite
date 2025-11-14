@@ -16,7 +16,7 @@ export default function HeroSection() {
   return (
     <section className="w-full pt-32 pb-20 bg-white text-center">
 
-      {/* TEXT */}
+   
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function HeroSection() {
         and deepen your faith journey.
       </motion.p>
 
-      {/* GLOWING CTA BUTTON */}
+     
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -50,7 +50,7 @@ export default function HeroSection() {
             transition-all duration-300 hover:bg-blue-700
           "
         >
-          {/* GLOW EFFECT */}
+         
           <span className="
             absolute inset-0 rounded-full bg-blue-500 opacity-40 blur-xl 
             -z-10 animate-pulse
@@ -67,7 +67,7 @@ export default function HeroSection() {
         </Link>
       </motion.div>
 
-      {/* IMAGE STRIP — like your sample */}
+    
       <div className="mt-16 flex justify-center gap-4 md:gap-6 px-4 flex-wrap md:flex-nowrap">
         {images.map((img, idx) => (
           <motion.div

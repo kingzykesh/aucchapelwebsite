@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full bg-black text-white mt-20 pt-16 pb-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
-        {/* BRAND */}
+       
         <div>
           <h1 className="text-2xl font-bold mb-3">
             AUC <span className="text-blue-500">Chapel</span>
@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* QUICK LINKS */}
+        
         <div>
           <h2 className="text-lg font-semibold mb-3">Quick Links</h2>
           <ul className="space-y-2 text-gray-300">
@@ -28,7 +28,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* CONTACT */}
+    
         <div>
           <h2 className="text-lg font-semibold mb-3">Contact</h2>
           <ul className="space-y-3 text-gray-300">
@@ -44,7 +44,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* SOCIALS */}
+
         <div>
           <h2 className="text-lg font-semibold mb-3">Follow Us</h2>
           <div className="flex gap-4">

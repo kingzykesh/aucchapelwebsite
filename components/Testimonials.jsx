@@ -11,7 +11,7 @@ export default function Testimonials() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Fetch testimonials
+  // Fetch testimonies here
   const fetchTestimonials = () => {
     fetch(`${process.env.NEXT_PUBLIC_API_BASE}/testimony/fetch_public.php`)
       .then((res) => res.json())
@@ -21,7 +21,7 @@ export default function Testimonials() {
 
   useEffect(() => { fetchTestimonials(); }, []);
 
-  // Auto play
+
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
@@ -40,7 +40,7 @@ export default function Testimonials() {
   if (testimonials.length === 0) return null;
   const t = testimonials[index];
 
-  // Submit form handler
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -94,7 +94,7 @@ export default function Testimonials() {
         <ChevronRight size={26} className="text-gray-700" />
       </button>
 
-      {/* FADE SLIDER */}
+      
       <div className="relative w-full max-w-4xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
@@ -105,18 +105,18 @@ export default function Testimonials() {
             transition={{ duration: 0.9, ease: "easeInOut" }}
             className="bg-white shadow-xl border border-gray-100 rounded-3xl p-12"
           >
-            {/* QUOTE */}
+           
             <p className="text-gray-800 text-xl md:text-2xl leading-relaxed italic text-center mb-10">
               “{t.message}”
             </p>
 
-            {/* IMPACT */}
+           
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg max-w-3xl mx-auto mb-10">
               <p className="font-semibold text-blue-700 mb-1">Impact:</p>
               <p className="text-gray-700 leading-relaxed">{t.impact ?? t.message}</p>
             </div>
 
-            {/* PROFILE */}
+           
             <div className="flex items-center justify-center gap-4">
               {t.image && (
                 <img
@@ -133,7 +133,7 @@ export default function Testimonials() {
         </AnimatePresence>
       </div>
 
-      {/* DOTS */}
+      
       <div className="flex gap-2 mt-8">
         {testimonials.map((_, i) => (
           <div
@@ -146,7 +146,7 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* SHARE TESTIMONY BUTTON */}
+      
       <button
         onClick={() => setShowModal(true)}
         className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition font-semibold hover:scale-105"
@@ -154,12 +154,12 @@ export default function Testimonials() {
         Share Your Testimony
       </button>
 
-      {/* MODAL */}
+    
       {showModal && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[999] px-4">
           <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative">
             
-            {/* Close button */}
+            
             <button
               className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
               onClick={() => setShowModal(false)}

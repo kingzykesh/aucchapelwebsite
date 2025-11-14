@@ -80,10 +80,10 @@ export default function Calendar() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const year = currentDate.getFullYear();
-  const monthIndex = currentDate.getMonth(); // 0–11
-  const month = monthIndex + 1; // 1–12
+  const monthIndex = currentDate.getMonth();
+  const month = monthIndex + 1; 
 
-  // Fetch events from PHP API
+ 
   useEffect(() => {
     const url = `${process.env.NEXT_PUBLIC_API_BASE}/events/fetch.php?year=${year}&month=${month}`;
     fetch(url)
@@ -92,20 +92,20 @@ export default function Calendar() {
       .catch((err) => console.error("Error fetching events:", err));
   }, [year, month]);
 
-  // Days in this month
+ 
   const daysInMonth = new Date(year, month, 0).getDate();
 
-  // First day of the month (0 = Sunday ... 6 = Saturday)
+  
   const firstDay = new Date(year, monthIndex, 1).getDay();
-  // Convert to Monday-based index (Mon=0 ... Sun=6)
+  
   const offset = firstDay === 0 ? 6 : firstDay - 1;
 
-  // Build calendar slots (null = empty cell)
+  
   const calendar = [];
   for (let i = 0; i < offset; i++) calendar.push(null);
   for (let d = 1; d <= daysInMonth; d++) calendar.push(d);
 
-  // Move to previous / next month
+ 
   const goToPrevMonth = () => {
     const prev = new Date(year, monthIndex - 1, 1);
     setCurrentDate(prev);
@@ -116,7 +116,7 @@ export default function Calendar() {
     setCurrentDate(next);
   };
 
-  // Filter options
+
   const filters = [
     "All",
     "Bible Study",
@@ -129,7 +129,7 @@ export default function Calendar() {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        {/* HEADER + NAV */}
+       
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
             <button
@@ -154,7 +154,7 @@ export default function Calendar() {
             </button>
           </div>
 
-          {/* FILTER CHIPS */}
+          
           <div className="flex flex-wrap gap-2">
             {filters.map((filter) => (
               <button
@@ -172,7 +172,7 @@ export default function Calendar() {
           </div>
         </div>
 
-        {/* WEEKDAY HEADER */}
+       
         <div className="grid grid-cols-7 bg-blue-600 text-white font-semibold rounded-t-lg text-center">
           {WEEKDAYS.map((day) => (
             <div key={day} className="py-3 text-sm md:text-base">
@@ -181,7 +181,7 @@ export default function Calendar() {
           ))}
         </div>
 
-        {/* CALENDAR GRID */}
+     
         <div className="grid grid-cols-7 border border-gray-300">
           {calendar.map((day, idx) => {
             const dayEvents =
@@ -207,7 +207,7 @@ export default function Calendar() {
                   </div>
                 )}
 
-                {/* EVENTS INSIDE EACH DAY */}
+             
                 {dayEvents.map((ev, i) => {
                   const category = getEventCategory(ev.title);
                   const badgeStyle = getCategoryStyles(category);
@@ -231,7 +231,7 @@ export default function Calendar() {
         </div>
       </div>
 
-      {/* EVENT MODAL */}
+     
       {selectedEvent && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 p-6 relative">

@@ -25,7 +25,7 @@ export default function RecentSermons() {
   return (
     <section className="py-16 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* HEADER */}
+        
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900">
             Recent Sermons
@@ -39,7 +39,7 @@ export default function RecentSermons() {
           </a>
         </div>
 
-        {/* SERMON GRID */}
+    
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {sermons.map((sermon) => {
             const id = extractYouTubeId(sermon.youtube_url);
@@ -53,7 +53,7 @@ export default function RecentSermons() {
                 href={`/sermons/${sermon.id}`}
                 className="bg-white border rounded-xl shadow-sm hover:shadow-md transition overflow-hidden group"
               >
-                {/* THUMBNAIL */}
+                {/* YOUTUBE THUMBNAIL HERE */}
                 <div className="relative bg-gray-100 h-44">
                   <img
                     src={thumbnail}
@@ -61,13 +61,13 @@ export default function RecentSermons() {
                     className="object-cover w-full h-full"
                   />
 
-                  {/* Play overlay */}
+                  
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
                     <Play size={40} className="text-white" />
                   </div>
                 </div>
 
-                {/* DETAILS */}
+              
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 text-lg leading-tight mb-1">
                     {sermon.title}

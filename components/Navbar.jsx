@@ -40,7 +40,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* MOBILE TOGGLE */}
+
         <button 
           onClick={() => setOpen(!open)} 
           className="md:hidden text-white"
@@ -49,7 +49,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+     
       {open && (
         <div className="md:hidden bg-black/90 text-white p-6 space-y-6">
           {links.map((link) => (

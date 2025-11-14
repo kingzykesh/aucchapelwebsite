@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 function extractYouTubeId(url) {
   if (!url) return null;
 
-  // Support for ?v=ID, youtu.be/ID, embed/ID
+
   const patterns = [
     /[?&]v=([^&]+)/,                   
     /youtu\.be\/([^?&]+)/,             
@@ -22,7 +22,7 @@ function extractYouTubeId(url) {
 }
 
 export default function SingleSermonPage() {
-  const { id } = useParams();       // ✅ FIX HERE
+  const { id } = useParams();     
   const [sermon, setSermon] = useState(null);
 
   useEffect(() => {
@@ -42,12 +42,12 @@ export default function SingleSermonPage() {
     <div className="bg-white min-h-screen py-16 px-6">
       <div className="max-w-5xl mx-auto">
         
-        {/* TITLE */}
+      
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
           {sermon.title}
         </h1>
 
-        {/* MINISTER + DATE */}
+      
         <p className="text-gray-600 text-lg mb-6">
           {sermon.minister} ·{" "}
           {new Date(sermon.date).toLocaleDateString("en-US", {
@@ -57,7 +57,7 @@ export default function SingleSermonPage() {
           })}
         </p>
 
-        {/* YOUTUBE PLAYER */}
+  
         <div className="w-full aspect-video bg-gray-200 rounded-xl overflow-hidden shadow mb-10">
           {videoId ? (
             <iframe
@@ -70,7 +70,7 @@ export default function SingleSermonPage() {
           )}
         </div>
 
-        {/* NOTES */}
+        
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
           Sermon Notes
         </h2>

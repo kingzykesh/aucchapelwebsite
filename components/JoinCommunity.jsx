@@ -4,7 +4,7 @@ import { Heart, Users, Mail } from "lucide-react";
 export default function JoinCommunity() {
   return (
     <section className="w-full bg-white py-20 px-6">
-      {/* TITLE */}
+     
       <div className="max-w-5xl mx-auto text-left mb-12">
         <h2 className="text-3xl text-black md:text-4xl font-bold mb-2">
           Join Our Community
@@ -15,9 +15,9 @@ export default function JoinCommunity() {
         </p>
       </div>
 
-      {/* TOP 3 CARDS */}
+     
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-        {/* GIVE ONLINE */}
+       
         <div className="bg-blue-50 rounded-xl p-8 border border-blue-100 hover:shadow-lg transition">
           <Heart size={32} className="text-blue-600 mb-4" />
           <h3 className="text-xl text-black font-semibold mb-2">Give Online</h3>
@@ -30,7 +30,7 @@ export default function JoinCommunity() {
           </a>
         </div>
 
-        {/* JOIN A UNIT */}
+
         <div className="bg-blue-50 rounded-xl p-8 border border-blue-100 hover:shadow-lg transition">
           <Users size={32} className="text-blue-600 mb-4" />
           <h3 className="text-xl text-black font-semibold mb-2">Join a Unit</h3>
@@ -43,7 +43,7 @@ export default function JoinCommunity() {
           </a>
         </div>
 
-        {/* PRAYER REQUEST */}
+      
         <div className="bg-blue-50 rounded-xl p-8 border border-blue-100 hover:shadow-lg transition">
           <Mail size={32} className="text-blue-600 mb-4" />
           <h3 className="text-xl  text-black font-semibold mb-2">Submit a Prayer Request</h3>
@@ -57,7 +57,7 @@ export default function JoinCommunity() {
         </div>
       </div>
 
-      {/* NEWSLETTER SECTION */}
+    
       <div className="max-w-5xl mx-auto bg-blue-50 border border-blue-100 rounded-xl p-10 mt-16">
         <h3 className="text-xl font-semibold mb-2">Stay Connected</h3>
         <p className="text-gray-600 mb-6">
