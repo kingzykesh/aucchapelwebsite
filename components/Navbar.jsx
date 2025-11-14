@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Sermon", href: "/sermons" },
-    { name: "Giving", href: "/giving" },
+    { name: "Giving", href: "/give" },
     { name: "Library", href: "/library" },
     { name: "Anonymous", href: "/anonymous" },
     { name: "Login", href: "/login" },
@@ -27,7 +27,7 @@ export default function Navbar() {
             <span className="sr-only">AUC Chapel</span>
         </Link>
 
-        {/* DESKTOP MENU */}
+       
         <div className="hidden md:flex gap-8 text-white">
           {links.map((link) => (
             <Link 

@@ -11,7 +11,7 @@ export default function Testimonials() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Fetch testimonies here
+
   const fetchTestimonials = () => {
     fetch(`${process.env.NEXT_PUBLIC_API_BASE}/testimony/fetch_public.php`)
       .then((res) => res.json())
@@ -71,7 +71,7 @@ export default function Testimonials() {
   return (
     <div className="relative w-full py-20 bg-white flex flex-col items-center">
 
-      {/* TITLE */}
+      
       <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-3">
         How God is Changing Lives on Our Campus
       </h2>
@@ -79,7 +79,7 @@ export default function Testimonials() {
         Hear real stories from students experiencing God's transforming power.
       </p>
 
-      {/* ARROWS */}
+    
       <button
         onClick={prevSlide}
         className="absolute left-10 top-1/2 -translate-y-1/2 bg-white shadow-lg w-12 h-12 flex items-center justify-center rounded-full hover:scale-105 transition z-10"

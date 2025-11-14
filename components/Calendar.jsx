@@ -13,7 +13,7 @@ const WEEKDAYS = [
   "Sunday",
 ];
 
-// Map events to categories based on title
+
 function getEventCategory(title = "") {
   const t = title.toLowerCase();
 
@@ -25,7 +25,7 @@ function getEventCategory(title = "") {
   return "Other";
 }
 
-// Color styles per category
+
 function getCategoryStyles(category) {
   switch (category) {
     case "Bible Study":
@@ -41,7 +41,7 @@ function getCategoryStyles(category) {
   }
 }
 
-// Description for recurring events
+
 function getEventDescription(ev) {
   const title = (ev.title || "").toLowerCase();
 
@@ -58,11 +58,11 @@ function getEventDescription(ev) {
     return "The monthly student prayer meeting — a moment of collective intercession for spiritual growth, revival, and divine strength.";
   }
 
-  // Custom event from DB
+  
   return ev.description || "No additional description provided for this event.";
 }
 
-// Format time nicely
+
 function formatTime(time) {
   if (!time) return "";
   const [h, m] = time.split(":");

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Play } from "lucide-react";
 
-// Extract YouTube ID from any standard YouTube link
+
 function extractYouTubeId(url) {
   if (!url) return null;
   const pattern =
@@ -53,7 +53,7 @@ export default function RecentSermons() {
                 href={`/sermons/${sermon.id}`}
                 className="bg-white border rounded-xl shadow-sm hover:shadow-md transition overflow-hidden group"
               >
-                {/* YOUTUBE THUMBNAIL HERE */}
+                
                 <div className="relative bg-gray-100 h-44">
                   <img
                     src={thumbnail}
