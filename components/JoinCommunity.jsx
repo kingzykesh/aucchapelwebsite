@@ -25,7 +25,7 @@ export default function JoinCommunity() {
             Support our chapel’s mission and help us serve students better.
             Your generosity makes a difference.
           </p>
-          <a href="#" className="text-blue-600 font-medium hover:underline">
+          <a href="/give" className="text-blue-600 font-medium hover:underline">
             Start Giving
           </a>
         </div>
@@ -33,7 +33,7 @@ export default function JoinCommunity() {
 
         <div className="bg-blue-50 rounded-xl p-8 border border-blue-100 hover:shadow-lg transition">
           <Users size={32} className="text-blue-600 mb-4" />
-          <h3 className="text-xl text-black font-semibold mb-2">Join a Unit</h3>
+          <h3 className="text-xl text-black font-semibold mb-2">Join Our Community</h3>
           <p className="text-gray-600 mb-4 leading-relaxed">
             Get connected with our various ministry units: music, ushering,
             evangelism, outreach, and more.
