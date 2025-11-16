@@ -66,13 +66,13 @@ export default function HeroSection() {
 
           <h1 className="text-white font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight drop-shadow-xl animate-slideUp">
             WE ENVISION ALL MEN <br />
-            CELEBRATING ENDLESS <br />
+            BECOMING RAPTURABLE <br />
             <span className="text-red-500">LIFE IN CHRIST</span>
           </h1>
 
           <div className="mt-8 flex gap-5 animate-fadeIn">
             <a
-              href="/livestream"
+              href="/sermons"
               className="bg-white text-black px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
             >
               WATCH LIVE
