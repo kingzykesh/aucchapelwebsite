@@ -38,8 +38,8 @@ export default function JoinCommunity() {
             Get connected with our various ministry units: music, ushering,
             evangelism, outreach, and more.
           </p>
-          <a href="#" className="text-blue-600 font-medium hover:underline">
-            Learn More
+          <a href="https://chat.whatsapp.com/DhDYIYoe6A3105r7ukxuJ1" className="text-blue-600 font-medium hover:underline">
+            Join Our Community
           </a>
         </div>
 
@@ -51,8 +51,8 @@ export default function JoinCommunity() {
             Share your prayer needs with our community. We believe in the power
             of intercessory prayer.
           </p>
-          <a href="#" className="text-blue-600 font-medium hover:underline">
-            Submit Anonymously
+          <a href="/prayerrequest" className="text-blue-600 font-medium hover:underline">
+            Turn In Prayer Request
           </a>
         </div>
       </div>

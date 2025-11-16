@@ -1,98 +1,163 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import {
+  Instagram,
+  Facebook,
+  Youtube,
+  Twitter,
+  Music2, // TikTok alternative icon
+} from "lucide-react";
 
 export default function HeroSection() {
   const images = [
-    "/chapel/1.jpg",
-    "/chapel/1.jpg",
-    "/chapel/1.jpg",
-    "/chapel/1.jpg",
-    "/chapel/1.jpg",
+    "/images/image5.jpg",
+  "/images/image4.jpg",
+  "/images/image2.jpg",
+  "/images/image7.jpg",
   ];
 
+  const [index, setIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+
+  // Auto-switch background images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="w-full pt-32 pb-20 bg-white text-center">
+    <>
+      {/* HERO SECTION */}
+      <section className="relative h-[92vh] w-full overflow-hidden">
 
-   
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-6xl font-extrabold text-[#0A1A2F]"
-      >
-        Welcome to AUL Chapel
-      </motion.h1>
+        {/* BACKGROUND IMAGES */}
+        <div className="absolute inset-0">
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                i === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={img}
+                alt="Chapel background"
+                fill
+                className="object-cover object-[center_20%]"
+                priority={i === 0}
+              />
+            </div>
+          ))}
+        </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="mt-4 text-gray-600 max-w-2xl mx-auto text-lg"
-      >
-        Join our community to connect with fellow believers, explore events,
-        and deepen your faith journey.
-      </motion.p>
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-     
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="mt-8 flex items-center justify-center gap-6"
-      >
-        <Link
-          href="/live"
-          className="
-            relative px-8 py-3 bg-blue-600 text-white font-semibold rounded-full 
-            transition-all duration-300 hover:bg-blue-700
-          "
+        {/* CONTENT */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+
+          <span className="px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm mb-4 animate-fadeIn">
+            OUR VISION
+          </span>
+
+          <h1 className="text-white font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight drop-shadow-xl animate-slideUp">
+            WE ENVISION ALL MEN <br />
+            CELEBRATING ENDLESS <br />
+            <span className="text-red-500">LIFE IN CHRIST</span>
+          </h1>
+
+          <div className="mt-8 flex gap-5 animate-fadeIn">
+            <a
+              href="/livestream"
+              className="bg-white text-black px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
+            >
+              WATCH LIVE
+            </a>
+
+            <button
+              onClick={() => setShowModal(true)}
+              className="border border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition"
+            >
+              QUICK LINKS
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* MODAL BACKDROP */}
+      {showModal && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn"
+          onClick={() => setShowModal(false)}
         >
-         
-          <span className="
-            absolute inset-0 rounded-full bg-blue-500 opacity-40 blur-xl 
-            -z-10 animate-pulse
-          "></span>
-
-          Watch Live
-        </Link>
-
-        <Link
-          href="/about"
-          className="text-gray-700 text-lg hover:text-blue-600 transition flex items-center gap-2"
-        >
-          Learn more →
-        </Link>
-      </motion.div>
-
-    
-      <div className="mt-16 flex justify-center gap-4 md:gap-6 px-4 flex-wrap md:flex-nowrap">
-        {images.map((img, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: idx * 0.15, duration: 0.6 }}
-            className="
-              relative w-[150px] h-[110px] 
-              sm:w-[200px] sm:h-[150px]
-              md:w-[230px] md:h-[170px]
-              rounded-2xl overflow-hidden
-              shadow-xl
-              bg-white/60 backdrop-blur-sm
-            "
+          {/* MODAL BOX */}
+          <div
+            className="bg-white rounded-2xl p-8 max-w-md w-full shadow-xl animate-scaleIn"
+            onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={img}
-              alt="Chapel image"
-              fill
-              className="object-cover opacity-90"
-            />
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+              Connect With Us
+            </h2>
+
+            {/* SOCIAL ICON GRID */}
+            <div className="grid grid-cols-3 gap-5 text-center">
+
+              {/* INSTAGRAM */}
+              <a href="#" target="_blank" className="group">
+                <div className="p-4 rounded-xl bg-pink-100 group-hover:bg-pink-200 transition flex items-center justify-center">
+                  <Instagram className="h-8 w-8 text-pink-600 group-hover:scale-110 transition" />
+                </div>
+                <p className="text-sm mt-2">Instagram</p>
+              </a>
+
+              {/* YOUTUBE */}
+              <a href="#" target="_blank" className="group">
+                <div className="p-4 rounded-xl bg-red-100 group-hover:bg-red-200 transition flex items-center justify-center">
+                  <Youtube className="h-8 w-8 text-red-600 group-hover:scale-110 transition" />
+                </div>
+                <p className="text-sm mt-2">YouTube</p>
+              </a>
+
+              {/* FACEBOOK */}
+              <a href="#" target="_blank" className="group">
+                <div className="p-4 rounded-xl bg-blue-100 group-hover:bg-blue-200 transition flex items-center justify-center">
+                  <Facebook className="h-8 w-8 text-blue-700 group-hover:scale-110 transition" />
+                </div>
+                <p className="text-sm mt-2">Facebook</p>
+              </a>
+
+              {/* TIKTOK */}
+              <a href="#" target="_blank" className="group">
+                <div className="p-4 rounded-xl bg-black/10 group-hover:bg-black/20 transition flex items-center justify-center">
+                  <Music2 className="h-8 w-8 text-black group-hover:scale-110 transition" />
+                </div>
+                <p className="text-sm mt-2">TikTok</p>
+              </a>
+
+              {/* X/TWITTER */}
+              <a href="#" target="_blank" className="group">
+                <div className="p-4 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition flex items-center justify-center">
+                  <Twitter className="h-8 w-8 text-gray-700 group-hover:scale-110 transition" />
+                </div>
+                <p className="text-sm mt-2">Twitter/X</p>
+              </a>
+
+            </div>
+
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

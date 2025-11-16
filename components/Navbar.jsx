@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link 
               key={link.name} 
               href={link.href}
-              className="hover:text-blue-400 transition duration-200"
+              className="hover:text-blue-500 transition duration-200"
             >
               {link.name}
             </Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-lg hover:text-blue-400 transition"
+              className="block text-lg hover:text-blue-500 transition"
             >
               {link.name}
             </Link>

@@ -20,3 +20,21 @@ body {
 .animate-fadeIn {
   animation: fadeIn .5s ease-out forwards;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 1.4s ease forwards;
+}

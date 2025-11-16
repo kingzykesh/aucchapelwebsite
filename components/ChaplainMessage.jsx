@@ -34,7 +34,7 @@ export default function ChaplainMessage() {
         </p>
 
         <p className="text-right text-gray-800 font-semibold mt-6">
-          – Pastor Doctor Ilori, Chaplain –
+          – Pastor Prof Ilori, Chaplain –
         </p>
       </motion.div>
     </section>
