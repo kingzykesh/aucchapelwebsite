@@ -48,9 +48,9 @@ export default function Footer() {
         <div>
           <h2 className="text-lg font-semibold mb-3">Follow Us</h2>
           <div className="flex gap-4">
-            <Link href="https://web.facebook.com/anchoruniversitychapel" className="hover:text-blue-400"><Facebook /></Link>
-            <Link href="https://www.instagram.com/au_chapel/" className="hover:text-blue-400"><Instagram /></Link>
-            <Link href="https://www.youtube.com/@anchoruniversitychapel" className="hover:text-blue-400"><Youtube /></Link>
+            <Link target="blank" href="https://web.facebook.com/anchoruniversitychapel" className="hover:text-blue-400"><Facebook /></Link>
+            <Link target="blank" href="https://www.instagram.com/au_chapel/" className="hover:text-blue-400"><Instagram /></Link>
+            <Link target="blank" href="https://www.youtube.com/@anchoruniversitychapel" className="hover:text-blue-400"><Youtube /></Link>
           </div>
         </div>
       </div>
