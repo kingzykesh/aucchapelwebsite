@@ -9,7 +9,7 @@ export default function Footer() {
        
         <div>
           <h1 className="text-2xl font-bold mb-3">
-            AUC <span className="text-blue-500">Chapel</span>
+            AU <span className="text-blue-500">Chapel</span>
           </h1>
           <p className="text-gray-400 text-sm leading-6">
             A place of worship, transformation, scripture, and spiritual growth.  
@@ -24,7 +24,7 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
             <li><Link href="/sermons" className="hover:text-blue-400">Sermons</Link></li>
             <li><Link href="/events" className="hover:text-blue-400">Events</Link></li>
-            <li><Link href="/giving" className="hover:text-blue-400">Giving</Link></li>
+            <li><Link href="/give" className="hover:text-blue-400">Giving</Link></li>
           </ul>
         </div>
 
@@ -48,15 +48,15 @@ export default function Footer() {
         <div>
           <h2 className="text-lg font-semibold mb-3">Follow Us</h2>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-blue-400"><Facebook /></Link>
-            <Link href="#" className="hover:text-blue-400"><Instagram /></Link>
-            <Link href="#" className="hover:text-blue-400"><Youtube /></Link>
+            <Link href="https://web.facebook.com/anchoruniversitychapel" className="hover:text-blue-400"><Facebook /></Link>
+            <Link href="https://www.instagram.com/au_chapel/" className="hover:text-blue-400"><Instagram /></Link>
+            <Link href="https://www.youtube.com/@anchoruniversitychapel" className="hover:text-blue-400"><Youtube /></Link>
           </div>
         </div>
       </div>
 
       <p className="text-center text-gray-500 text-sm mt-12">
-        © {new Date().getFullYear()} AUC Chapel. All rights reserved.
+        © {new Date().getFullYear()} AU Chapel. All rights reserved.
       </p>
     </footer>
   );

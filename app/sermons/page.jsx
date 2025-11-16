@@ -70,7 +70,17 @@ export default function SermonsPage() {
   const startIndex = (currentPage - 1) * PER_PAGE;
   const paginatedSermons = filtered.slice(startIndex, startIndex + PER_PAGE);
 
-  if (!sermons.length) return <div className="p-10">Loading sermons...</div>;
+  if (!sermons.length)
+  return (
+    <div className="flex flex-col items-center justify-center h-[60vh] w-full">
+      <div className="w-14 h-14 border-4 border-blue-500 border-t-transparent animate-spin rounded-full"></div>
+
+      <p className="text-gray-600 mt-4 text-lg animate-pulse">
+        Loading sermons...
+      </p>
+    </div>
+  );
+
 
   return (
     <div className="px-6 md:px-16 py-16 bg-white flex flex-col lg:flex-row gap-10">

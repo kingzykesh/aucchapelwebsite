@@ -134,7 +134,7 @@ export default function Calendar() {
           <div className="flex items-center gap-3">
             <button
               onClick={goToPrevMonth}
-              className="p-2 bg-black hover:bg-red-500 rounded-full"
+              className="p-2 bg-white hover:bg-red-500 rounded-full"
             >
               <ChevronLeft />
             </button>
@@ -148,7 +148,7 @@ export default function Calendar() {
 
             <button
               onClick={goToNextMonth}
-              className="p-2 bg-black hover:bg-red-500 rounded-full"
+              className="p-2 bg-white hover:bg-red-500 rounded-full"
             >
               <ChevronRight />
             </button>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block internal admin URLs
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Sitemap
+Sitemap: https://https://auchapel.com//sitemap.xml
