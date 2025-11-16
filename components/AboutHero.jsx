@@ -14,10 +14,9 @@ import {
 } from "lucide-react";
 
 const HERO_IMAGES = [
-  "/images/image5.jpg",
+   "/images/image5.jpg",
   "/images/image4.jpg",
   "/images/image2.jpg",
-  "/images/image1.jpg",
   "/images/image7.jpg",
 ];
 
@@ -192,7 +191,7 @@ export default function HeroSection() {
                 {/* Instagram */}
                 <SocialIconCard
                   label="Instagram"
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/au_chapel/"
                   bg="bg-pink-100"
                   hoverBg="group-hover:bg-pink-200"
                 >
@@ -202,7 +201,7 @@ export default function HeroSection() {
                 {/* Facebook */}
                 <SocialIconCard
                   label="Facebook"
-                  href="https://facebook.com"
+                  href="https://web.facebook.com/anchoruniversitychapel"
                   bg="bg-blue-100"
                   hoverBg="group-hover:bg-blue-200"
                 >
@@ -212,27 +211,17 @@ export default function HeroSection() {
                 {/* YouTube */}
                 <SocialIconCard
                   label="YouTube"
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@aul_chapel"
                   bg="bg-red-100"
                   hoverBg="group-hover:bg-red-200"
                 >
                   <Youtube className="h-8 w-8 text-red-600" />
                 </SocialIconCard>
 
-                {/* X / Twitter */}
-                <SocialIconCard
-                  label="X (Twitter)"
-                  href="https://twitter.com"
-                  bg="bg-slate-100"
-                  hoverBg="group-hover:bg-slate-200"
-                >
-                  <Twitter className="h-8 w-8 text-slate-700" />
-                </SocialIconCard>
               </div>
 
               <p className="text-xs text-slate-500 mt-6">
-                Tip: You can pin this site to your home screen for quick access
-                to livestreams and resources.
+                Tip: Be the First to know about special events by following us on all socials!
               </p>
             </motion.div>
           </motion.div>

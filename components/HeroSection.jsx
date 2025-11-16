@@ -107,7 +107,7 @@ export default function HeroSection() {
             <div className="grid grid-cols-3 gap-5 text-center">
 
               {/* INSTAGRAM */}
-              <a href="#" target="_blank" className="group">
+              <a href="https://www.instagram.com/au_chapel/" target="_blank" className="group">
                 <div className="p-4 rounded-xl bg-pink-100 group-hover:bg-pink-200 transition flex items-center justify-center">
                   <Instagram className="h-8 w-8 text-pink-600 group-hover:scale-110 transition" />
                 </div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
               </a>
 
               {/* YOUTUBE */}
-              <a href="#" target="_blank" className="group">
+              <a href="https://www.youtube.com/@aul_chapel" target="_blank" className="group">
                 <div className="p-4 rounded-xl bg-red-100 group-hover:bg-red-200 transition flex items-center justify-center">
                   <Youtube className="h-8 w-8 text-red-600 group-hover:scale-110 transition" />
                 </div>
@@ -123,28 +123,14 @@ export default function HeroSection() {
               </a>
 
               {/* FACEBOOK */}
-              <a href="#" target="_blank" className="group">
+              <a href="https://web.facebook.com/anchoruniversitychapel" target="_blank" className="group">
                 <div className="p-4 rounded-xl bg-blue-100 group-hover:bg-blue-200 transition flex items-center justify-center">
                   <Facebook className="h-8 w-8 text-blue-700 group-hover:scale-110 transition" />
                 </div>
                 <p className="text-sm mt-2">Facebook</p>
               </a>
 
-              {/* TIKTOK */}
-              <a href="#" target="_blank" className="group">
-                <div className="p-4 rounded-xl bg-black/10 group-hover:bg-black/20 transition flex items-center justify-center">
-                  <Music2 className="h-8 w-8 text-black group-hover:scale-110 transition" />
-                </div>
-                <p className="text-sm mt-2">TikTok</p>
-              </a>
-
-              {/* X/TWITTER */}
-              <a href="#" target="_blank" className="group">
-                <div className="p-4 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition flex items-center justify-center">
-                  <Twitter className="h-8 w-8 text-gray-700 group-hover:scale-110 transition" />
-                </div>
-                <p className="text-sm mt-2">Twitter/X</p>
-              </a>
+             
 
             </div>
 

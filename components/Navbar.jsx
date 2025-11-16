@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Sermon", href: "/sermons" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Giving", href: "/give" },
     { name: "Library", href: "/library" },
     { name: "Anonymous", href: "/anonymous" },
