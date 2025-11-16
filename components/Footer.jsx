@@ -33,10 +33,10 @@ export default function Footer() {
           <h2 className="text-lg font-semibold mb-3">Contact</h2>
           <ul className="space-y-3 text-gray-300">
             <li className="flex items-center gap-3">
-              <Mail size={18} /> chapel@auniversity.edu
+              <Mail size={18} /> dlcf@aul.edu.ng
             </li>
             <li className="flex items-center gap-3">
-              <Phone size={18} /> +234 810 000 0000
+              <Phone size={18} /> +234 701 225 7469
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={18} /> Anchor University, Lagos

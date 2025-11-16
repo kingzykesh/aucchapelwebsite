@@ -24,7 +24,7 @@ export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [showLinks, setShowLinks] = useState(false);
 
-  // Rotate hero images
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
@@ -35,7 +35,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-slate-950 text-slate-100 pt-24 pb-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center gap-12">
-        {/* LEFT SIDE - TEXT */}
+      
         <div className="flex-1">
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-500/40 px-3 py-1 mb-4">
             <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
@@ -62,9 +62,9 @@ export default function HeroSection() {
             community on campus.
           </p>
 
-          {/* BUTTONS */}
+         
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            {/* Watch Live */}
+           
             <motion.a
               href="/sermon"
               whileHover={{ scale: 1.04, boxShadow: "0 0 25px rgba(59,130,246,0.7)" }}
@@ -77,7 +77,7 @@ export default function HeroSection() {
               Watch Live
             </motion.a>
 
-            {/* Quick Links */}
+          
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
@@ -89,7 +89,7 @@ export default function HeroSection() {
             </motion.button>
           </div>
 
-          {/* SERVICE INFO */}
+        
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs md:text-sm">
             <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
               <p className="text-slate-400 uppercase tracking-wide text-[11px] mb-1">
@@ -112,10 +112,10 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT SIDE - IMAGE / COLLAGE */}
+        
         <div className="flex-1 w-full mt-6 md:mt-10">
           <div className="relative rounded-[32px] border border-slate-700/70 bg-gradient-to-br from-blue-900/60 via-slate-900 to-slate-950 shadow-2xl px-3 pt-8 pb-6 md:px-6 md:pt-10 md:pb-8">
-            {/* Slightly push content down */}
+      
             <div className="mt-4">
               <div className="relative w-full aspect-[4/5] overflow-hidden rounded-3xl">
                 <Image
@@ -128,12 +128,12 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Floating badge */}
+       
             <div className="absolute -top-4 right-6 bg-emerald-400 text-slate-900 px-4 py-1 rounded-full text-xs font-semibold shadow-lg">
               Live on Campus
             </div>
 
-            {/* Dots for images */}
+     
             <div className="flex justify-center mt-4 gap-2">
               {HERO_IMAGES.map((_, idx) => (
                 <span
@@ -150,7 +150,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* QUICK LINKS MODAL */}
+
       <AnimatePresence>
         {showLinks && (
           <motion.div
@@ -231,9 +231,7 @@ export default function HeroSection() {
   );
 }
 
-/**
- * Reusable social icon card with animation
- */
+
 function SocialIconCard({ children, label, href, bg, hoverBg }) {
   return (
     <motion.a
