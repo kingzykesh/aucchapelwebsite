@@ -60,12 +60,12 @@ export default function PrayerRequestPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#0b1b3a] to-black text-white py-20 px-6">
 
-      {/* Background soft lights */}
+     
       <div className="absolute inset-0 -z-10 opacity-30 bg-[url('/textures/light-pattern.png')] bg-cover"></div>
 
       <div className="max-w-3xl mx-auto">
 
-        {/* Heading */}
+      
         <div className="text-center mb-10 animate-fadeIn">
           
           <h1 className="text-4xl font-bold tracking-wide">
@@ -76,7 +76,7 @@ export default function PrayerRequestPage() {
           </p>
         </div>
 
-        {/* Form Card */}
+       
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/20 animate-slideUp">
 
           <form onSubmit={handleSubmit} className="space-y-6">

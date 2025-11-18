@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ChaplainMessage() {
   return (
@@ -23,19 +24,30 @@ export default function ChaplainMessage() {
         </h2>
 
         <p className="text-gray-700 leading-8 text-[17px] md:text-[18px]">
-          Welcome to the Anchor University Chapel — a home where students grow 
-          in faith, character, and purpose. We believe that your time here is not 
-          just about academics, but about discovering who you're meant to be. 
-          Our chapel is a space where you can explore your faith, connect with 
-          others who share your values, and experience the transforming power of 
-          God's love. Whether you're just beginning your spiritual journey or 
-          deepening your relationship with God, we invite you to be part of our 
+          Welcome to the Anchor University Chapel — a home where students grow
+          in faith, character, and purpose. We believe that your time here is not
+          just about academics, but about discovering who you're meant to be.
+          Our chapel is a space where you can explore your faith, connect with
+          others who share your values, and experience the transforming power of
+          God's love. Whether you're just beginning your spiritual journey or
+          deepening your relationship with God, we invite you to be part of our
           community. You belong here.
         </p>
 
-        <p className="text-right text-gray-800 font-semibold mt-6">
-          – Pastor Prof Ilori, Chaplain –
-        </p>
+    
+        <div className="flex items-center gap-4 mt-8">
+          <Image
+            src="/chaplain.jpg"   
+            alt="Chaplain"
+            width={50}
+            height={50}
+            className="rounded-full object-cover border border-gray-300 shadow-sm"
+          />
+
+          <p className="text-gray-800 font-semibold">
+            – Pastor Prof Ilori, Chaplain –
+          </p>
+        </div>
       </motion.div>
     </section>
   );

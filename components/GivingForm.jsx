@@ -43,7 +43,7 @@ export default function GivingForm() {
   };
 
   const copyAccount = () => {
-    navigator.clipboard.writeText("8145789624");
+    navigator.clipboard.writeText("1932058897");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -123,7 +123,7 @@ export default function GivingForm() {
             <p className="text-gray-700 mb-1 font-medium">Account Number</p>
             <div className="flex items-center gap-3 bg-white p-3 rounded-lg border">
               <span className="text-lg tracking-wider font-semibold text-gray-900">
-                8145789624
+                1932058897
               </span>
               <button
                 onClick={copyAccount}

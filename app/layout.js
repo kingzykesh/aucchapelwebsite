@@ -78,20 +78,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black text-black antialiased">
+      <body className="bg-black text-white antialiased">
         <Navbar />
 
-        {/* Page content */}
+
         <main className="pt-20 min-h-screen">
           {children}
         </main>
 
         <Footer />
 
-        {/* Paystack Script */}
+      
         <script src="https://js.paystack.co/v1/inline.js"></script>
 
-        {/* Structured Data (SEO) */}
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

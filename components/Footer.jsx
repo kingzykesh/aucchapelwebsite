@@ -23,7 +23,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-300">
             <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
             <li><Link href="/sermons" className="hover:text-blue-400">Sermons</Link></li>
-            <li><Link href="/events" className="hover:text-blue-400">Events</Link></li>
+            <li><Link href="/gallery" className="hover:text-blue-400">Gallery</Link></li>
             <li><Link href="/give" className="hover:text-blue-400">Giving</Link></li>
           </ul>
         </div>
@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="flex gap-4">
             <Link target="blank" href="https://web.facebook.com/anchoruniversitychapel" className="hover:text-blue-400"><Facebook /></Link>
             <Link target="blank" href="https://www.instagram.com/au_chapel/" className="hover:text-blue-400"><Instagram /></Link>
-            <Link target="blank" href="https://www.youtube.com/@anchoruniversitychapel" className="hover:text-blue-400"><Youtube /></Link>
+            <Link target="blank" href="https://www.youtube.com/@aul_chapel" className="hover:text-blue-400"><Youtube /></Link>
           </div>
         </div>
       </div>

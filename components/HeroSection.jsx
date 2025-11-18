@@ -7,7 +7,7 @@ import {
   Facebook,
   Youtube,
   Twitter,
-  Music2, // TikTok alternative icon
+  Music2, 
 } from "lucide-react";
 
 export default function HeroSection() {
@@ -21,7 +21,7 @@ export default function HeroSection() {
   const [index, setIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  // Auto-switch background images
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
@@ -31,10 +31,10 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* HERO SECTION */}
+      
       <section className="relative h-[92vh] w-full overflow-hidden">
 
-        {/* BACKGROUND IMAGES */}
+       
         <div className="absolute inset-0">
           {images.map((img, i) => (
             <div
@@ -54,10 +54,10 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* DARK OVERLAY */}
+        
         <div className="absolute inset-0 bg-black/70"></div>
 
-        {/* CONTENT */}
+        
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
 
           <span className="px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm mb-4 animate-fadeIn">
@@ -88,13 +88,13 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* MODAL BACKDROP */}
+   
       {showModal && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn"
           onClick={() => setShowModal(false)}
         >
-          {/* MODAL BOX */}
+    
           <div
             className="bg-white rounded-2xl p-8 max-w-md w-full shadow-xl animate-scaleIn"
             onClick={(e) => e.stopPropagation()}
@@ -103,7 +103,7 @@ export default function HeroSection() {
               Connect With Us
             </h2>
 
-            {/* SOCIAL ICON GRID */}
+          
             <div className="grid grid-cols-3 gap-5 text-center">
 
               {/* INSTAGRAM */}
@@ -134,7 +134,7 @@ export default function HeroSection() {
 
             </div>
 
-            {/* CLOSE BUTTON */}
+          
             <button
               onClick={() => setShowModal(false)}
               className="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"

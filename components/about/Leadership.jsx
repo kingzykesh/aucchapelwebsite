@@ -5,17 +5,17 @@ export default function Leadership() {
     {
       name: "Pastor Dr. Ilori",
       title: "University Chaplain",
-      image: "/leaders/chaplain.jpg",
+      image: "/chaplain.jpg",
     },
     {
-      name: "Pastor Philip",
+      name: "Pastor Jerry",
       title: "Pastoral Assistant",
-      image: "/leaders/deputy.jpg",
+      image: "/pastorjerry.jpg",
     },
     {
       name: "Pastor Dr Okoro",
       title: "Pastoral Assistant",
-      image: "/leaders/studentrep.jpg",
+      image: "/drokoro.jpg",
     },
   ];
 
