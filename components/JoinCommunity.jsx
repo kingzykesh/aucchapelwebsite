@@ -59,7 +59,7 @@ export default function JoinCommunity() {
 
     
       <div className="max-w-5xl mx-auto bg-blue-50 border border-blue-100 rounded-xl p-10 mt-16">
-        <h3 className="text-xl font-semibold mb-2">Stay Connected</h3>
+        <h3 className="text-xl text-black font-semibold mb-2">Stay Connected</h3>
         <p className="text-gray-600 mb-6">
           Subscribe to our newsletter to stay updated with sermons, events, and
           community news.
@@ -69,7 +69,7 @@ export default function JoinCommunity() {
           <input
             type="email"
             placeholder="Enter your email address"
-            className="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+            className="flex-grow px-4 py-3 rounded-lg border text-black border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
           />
           <button className="bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 transition">
             Subscribe

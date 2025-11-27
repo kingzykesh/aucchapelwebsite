@@ -1,48 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
-      // Main Pixieset domain
-      {
-        protocol: "https",
-        hostname: "pixieset.com",
-      },
-
-      // Subdomains like abc.pixieset.com
-      {
-        protocol: "https",
-        hostname: "*.pixieset.com",
-      },
-
-      // Pixieset App CDN
-      {
-        protocol: "https",
-        hostname: "*.pixieset.app",
-      },
-
-      // Pixieset IO CDN
-      {
-        protocol: "https",
-        hostname: "*.pixieset.io",
-      },
-
-      // Pixieset NET CDN
-      {
-        protocol: "https",
-        hostname: "*.pixieset.net",
-      },
-
-      // Pixieset CDN
-      {
-        protocol: "https",
-        hostname: "*.pixiesetcdn.com",
-      },
-
-      // Additional CDN
-      {
-        protocol: "https",
-        hostname: "*.pf-cdn.com",
-      },
+      { protocol: "https", hostname: "pixieset.com" },
+      { protocol: "https", hostname: "*.pixieset.com" },
+      { protocol: "https", hostname: "*.pixieset.app" },
+      { protocol: "https", hostname: "*.pixieset.io" },
+      { protocol: "https", hostname: "*.pixieset.net" },
+      { protocol: "https", hostname: "*.pixiesetcdn.com" },
+      { protocol: "https", hostname: "*.pf-cdn.com" },
     ],
   },
 };

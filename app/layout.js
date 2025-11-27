@@ -2,6 +2,9 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+/* -----------------------------
+   SITE-WIDE SEO METADATA
+----------------------------- */
 export const metadata = {
   metadataBase: new URL("https://auchapel.com/"),
 
@@ -35,6 +38,11 @@ export const metadata = {
   creator: "Anchor University Chapel",
   publisher: "Anchor University Lagos",
 
+  /* GOOGLE ADSENSE VERIFICATION */
+  other: {
+    "google-adsense-account": "ca-pub-4409650443631239",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_NG",
@@ -45,7 +53,7 @@ export const metadata = {
       "The official chapel website of Anchor University Lagos. Join us for worship, sermons, livestreams, events, and campus ministry resources.",
     images: [
       {
-        url: "/opengraph/auc-og.jpg", 
+        url: "/auc-og.png",
         width: 1200,
         height: 630,
         alt: "Anchor University Chapel - Lagos",
@@ -58,40 +66,56 @@ export const metadata = {
     title: "Anchor University Chapel",
     description:
       "Encounter God. Discover purpose. Grow spiritually. Welcome to the chapel of Anchor University Lagos.",
-    images: ["/opengraph/auc-og.jpg"],
+    images: ["/auc-og.png"],
     creator: "@anchoruniversitylagos",
   },
 
   icons: {
     icon: "/favicon/favicon.ico",
-    shortcut: "/favicon/favicon.png",
-    apple: "/favicon/apple-touch-icon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 
   alternates: {
     canonical: "https://auchapel.com/",
   },
-
-  themeColor: "#003B99", 
 };
 
+/* -----------------------------
+   FIXED THEME COLOR (NEW API)
+----------------------------- */
+export const viewport = {
+  themeColor: "#003B99",
+};
+
+/* -----------------------------
+   ROOT LAYOUT
+----------------------------- */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4409650443631239"
+          crossOrigin="anonymous"
+        ></script>
+
+        {/* CMP (optional, we’ll add later if needed) */}
+      </head>
+
       <body className="bg-black text-white antialiased">
         <Navbar />
 
-
-        <main className="pt-20 min-h-screen">
-          {children}
-        </main>
+        <main className="pt-20 min-h-screen">{children}</main>
 
         <Footer />
 
-      
+        {/* Paystack */}
         <script src="https://js.paystack.co/v1/inline.js"></script>
 
-        
+        {/* Chapel Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,7 +124,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Anchor University Chapel",
               url: "https://auchapel.com/",
-              logo: "https://auchapel.com/favicon/favicon.png",
+              logo: "https://auchapel.com/favicon.png",
               sameAs: [
                 "https://web.facebook.com/anchoruniversitychapel",
                 "https://www.instagram.com/au_chapel/",

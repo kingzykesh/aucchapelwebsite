@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import AdBanner from "../../components/AdBanner";
 
 export default function SermonsPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE;
@@ -90,6 +91,7 @@ export default function SermonsPage() {
 
         <h1 className="text-3xl text-blue-700 font-bold mb-10">Sermons</h1>
 
+       <AdBanner adSlot="1234567890" className="my-6" />
        
         {filtered.length > 0 && (
           <div className="mb-16 bg-white shadow rounded-xl p-6">
@@ -109,7 +111,7 @@ export default function SermonsPage() {
 
             <div className="flex items-center gap-3 mt-5">
               <Link
-                href={`/sermons/${filtered[0].id}`}
+                href={`/sermons/`}
                 className="px-5 py-2 bg-blue-600 text-white rounded-lg"
               >
                 Watch
@@ -118,7 +120,7 @@ export default function SermonsPage() {
               <button className="px-5 py-2 bg-black text-white rounded-lg">
                 Listen
               </button>
-
+X
              
               <button
                 className="px-5 py-2 bg-black text-white rounded-lg"

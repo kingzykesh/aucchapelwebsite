@@ -50,7 +50,7 @@ export default function RecentSermons() {
             return (
               <a
                 key={sermon.id}
-                href={`/sermons/${sermon.id}`}
+                href={`/sermons/`}
                 className="bg-white border rounded-xl shadow-sm hover:shadow-md transition overflow-hidden group"
               >
                 

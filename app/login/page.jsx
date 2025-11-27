@@ -39,8 +39,9 @@ export default function ChapelLogin() {
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Enter your matric number to view your weekly attendance
+            Enter your matric number to view your <strong className="text-red-500">WEEKLY ATTENDANCE</strong>
           </p>
+         
         </div>
 
       
@@ -57,7 +58,7 @@ export default function ChapelLogin() {
               setMatric(e.target.value);
               setError("");
             }}
-            placeholder="e.g., AUL/CMP/22/093"
+            placeholder="e.g., AUL/CMP/22/000"
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 outline-none"
           />
 
@@ -77,7 +78,7 @@ export default function ChapelLogin() {
 
        
         <p className="text-center text-gray-500 text-sm mt-8">
-          Anchor University Chapel — Inspiring Faith. Shaping Destiny.
+          Anchor University Chapel, Inspiring Faith. Shaping Destiny.
         </p>
       </motion.div>
     </div>

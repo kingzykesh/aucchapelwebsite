@@ -16,6 +16,7 @@ export default function HeroSection() {
   "/images/image4.jpg",
   "/images/image2.jpg",
   "/images/image7.jpg",
+  "/jerry.jpg",
   ];
 
   const [index, setIndex] = useState(0);
