@@ -96,11 +96,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google AdSense Script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4409650443631239"
-          crossOrigin="anonymous"
-        ></script>
+       <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4409650443631239"
+  crossOrigin="anonymous"
+/>
+
 
         {/* CMP (optional, we’ll add later if needed) */}
       </head>
