@@ -38,6 +38,36 @@ export default async function sitemap() {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+      {
+      url: `${baseUrl}/attendance`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+      {
+      url: `${baseUrl}/login`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+      {
+      url: `${baseUrl}/anonymous`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+      {
+      url: `${baseUrl}/prayerrequest`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+      {
+      url: `${baseUrl}/share`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     {
       url: `${baseUrl}/give`,
       lastModified: new Date(),

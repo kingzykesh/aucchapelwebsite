@@ -3,6 +3,7 @@ import MissionVision from "@/components/about/MissionVision";
 import WhatWeDo from "@/components/about/WhatWeDo";
 import OurStory from "@/components/about/OurStory";
 import Leadership from "@/components/about/Leadership";
+import GoogleAd from "@/components/GoogleAd";
 
 export default function Home() {
   return (

@@ -33,7 +33,7 @@ export default function Footer() {
           <h2 className="text-lg font-semibold mb-3">Contact</h2>
           <ul className="space-y-3 text-gray-300">
             <li className="flex items-center gap-3">
-              <Mail size={18} /> dlcf@aul.edu.ng
+              <Mail size={18} /> anchoruniversitychapel@aul.edu.ng
             </li>
             <li className="flex items-center gap-3">
               <Phone size={18} /> +234 701 225 7469

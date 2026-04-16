@@ -1,34 +1,33 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, ScanSearch, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ScanSearch, TriangleAlert, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import GoogleAd from "@/components/GoogleAd";
 
 export default function ChapelLogin() {
   const [matric, setMatric] = useState("");
   const [error, setError] = useState("");
-
   const [showChooseModal, setShowChooseModal] = useState(false);
-  const [showComplaintModal, setShowComplaintModal] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const toastTimerRef = useRef(null);
 
-  const [complaintLoading, setComplaintLoading] = useState(false);
-  const [statusMsg, setStatusMsg] = useState("");
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    matricNumber: "",
-    type: "",
-    details: "",
-  });
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        window.clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
 
   const openModal = (e) => {
     e.preventDefault();
+
     if (!matric.trim()) {
       setError("Please enter your matric number.");
       return;
     }
+
     setShowChooseModal(true);
   };
 
@@ -36,57 +35,37 @@ export default function ChapelLogin() {
     window.location.href = `/attendance?matric=${encodeURIComponent(matric)}`;
   };
 
-  const openComplaintForm = () => {
-    setShowChooseModal(false);
-    setForm({ ...form, matricNumber: matric });
-    setShowComplaintModal(true);
-  };
+  const showMaintenanceToast = () => {
+    setToastMessage("Down for maintenance");
 
-  const submitComplaint = async (e) => {
-    e.preventDefault();
-    setComplaintLoading(true);
-    setStatusMsg("");
-
-    try {
-      const API = process.env.NEXT_PUBLIC_API_BASE;
-
-      const fd = new FormData();
-      fd.append("name", form.name);
-      fd.append("email", form.email);
-      fd.append("matric", form.matricNumber);
-      fd.append("type", form.type);
-      fd.append("details", form.details);
-
-      const res = await fetch(`${API}/complaints/submit.php`, {
-        method: "POST",
-        body: fd,
-      });
-
-      const data = await res.json();
-      setStatusMsg(data.msg);
-
-      if (data.status === "success") {
-        setForm({
-          name: "",
-          email: "",
-          matricNumber: "",
-          type: "",
-          details: "",
-        });
-
-        setTimeout(() => {
-          setShowComplaintModal(false);
-        }, 2000);
-      }
-    } catch {
-      setStatusMsg("Network error, try again.");
+    if (toastTimerRef.current) {
+      window.clearTimeout(toastTimerRef.current);
     }
 
-    setComplaintLoading(false);
+    toastTimerRef.current = window.setTimeout(() => {
+      setToastMessage("");
+      toastTimerRef.current = null;
+    }, 2500);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 px-6 py-12 flex flex-col items-center justify-start">
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed top-5 right-5 z-[100] max-w-sm"
+          >
+            <div className="flex items-center gap-3 rounded-2xl border border-amber-200 bg-white px-4 py-3 text-amber-900 shadow-xl">
+              <TriangleAlert size={18} className="shrink-0 text-amber-600" />
+              <p className="text-sm font-semibold">{toastMessage}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -96,7 +75,9 @@ export default function ChapelLogin() {
       >
         <div className="text-center mb-10">
           <ScanSearch className="w-16 h-16 mx-auto text-blue-600 mb-4" />
-          <h1 className="text-3xl font-bold text-blue-800">Chapel Attendance Check</h1>
+          <h1 className="text-3xl font-bold text-blue-800">
+            Chapel Attendance Check
+          </h1>
           <p className="text-gray-600 mt-2">
             Enter your matric number to view your{" "}
             <strong className="text-red-500">WEEKLY ATTENDANCE</strong>
@@ -104,7 +85,9 @@ export default function ChapelLogin() {
         </div>
 
         <form onSubmit={openModal}>
-          <label className="block text-gray-700 font-medium mb-2">Matric Number</label>
+          <label className="block text-gray-700 font-medium mb-2">
+            Matric Number
+          </label>
 
           <input
             type="text"
@@ -134,7 +117,7 @@ export default function ChapelLogin() {
       </motion.div>
 
       <div className="w-full max-w-4xl flex justify-center mt-4 mb-12">
-        <GoogleAd adSlot="4710894449" className="my-6" />
+        <GoogleAd slot="4710894449" />
       </div>
 
       <AnimatePresence>
@@ -170,102 +153,13 @@ export default function ChapelLogin() {
               </button>
 
               <button
-                onClick={openComplaintForm}
-                className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700"
+                type="button"
+                onClick={showMaintenanceToast}
+                aria-disabled="true"
+                className="w-full rounded-lg border border-red-200 bg-red-100 py-3 text-red-500 cursor-not-allowed"
               >
                 I Have a Complaint
               </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {showComplaintModal && (
-          <motion.div
-            className="fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="bg-white w-full max-w-xl p-8 rounded-2xl shadow-xl relative max-h-[90vh] overflow-y-auto"
-              initial={{ y: 60, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 60, opacity: 0 }}
-            >
-              <button
-                onClick={() => setShowComplaintModal(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              >
-                <X size={28} />
-              </button>
-
-              <h2 className="text-3xl font-bold text-blue-800 mb-8">Submit a Complaint</h2>
-
-              <form onSubmit={submitComplaint} className="space-y-6">
-
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full border border-gray-300 text-black rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  required
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full border border-gray-300 text-black rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                />
-
-                <input
-                  type="text"
-                  value={form.matricNumber}
-                  disabled
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-gray-100 text-gray-700"
-                />
-
-                <select
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-black focus:ring-2 focus:ring-red-500 outline-none"
-                  value={form.type}
-                  onChange={(e) => setForm({ ...form, type: e.target.value })}
-                  required
-                >
-                  <option value="">-- Select Complaint Type --</option>
-                  <option value="Student Not Found">Student Not Found</option>
-                  <option value="Attendance Incomplete">Attendance Incomplete</option>
-                  <option value="Wrong Attendance Assigned">Wrong Attendance Assigned</option>
-                  <option value="Other">Other</option>
-                </select>
-
-                <textarea
-                  placeholder="Describe your complaint..."
-                  className="w-full h-32 border border-gray-300 text-black rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                  value={form.details}
-                  onChange={(e) => setForm({ ...form, details: e.target.value })}
-                  required
-                ></textarea>
-
-                {statusMsg && (
-                  <p className="text-center text-sm bg-green-100 text-green-700 p-3 rounded-lg">
-                    {statusMsg}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={complaintLoading}
-                  className="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition"
-                >
-                  {complaintLoading ? "Submitting..." : "Submit Complaint"}
-                </button>
-
-              </form>
             </motion.div>
           </motion.div>
         )}

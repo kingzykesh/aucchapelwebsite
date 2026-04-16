@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import AdBanner from "../../components/AdBanner";
+import GoogleAd from "@/components/GoogleAd";
 
 export default function SermonsPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE;
@@ -91,7 +91,10 @@ export default function SermonsPage() {
 
         <h1 className="text-3xl text-blue-700 font-bold mb-10">Sermons</h1>
 
-       <AdBanner adSlot="1234567890" className="my-6" />
+     
+        <div className="my-10">
+          <GoogleAd slot="4710894449" />
+        </div>
        
         {filtered.length > 0 && (
           <div className="mb-16 bg-white shadow rounded-xl p-6">

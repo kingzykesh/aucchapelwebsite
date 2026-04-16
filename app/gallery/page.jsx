@@ -2,12 +2,19 @@
 
 import { ExternalLink, X, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import GoogleAd from "@/components/GoogleAd";
 import { useState } from "react";
 
 export default function GalleryPage() {
   const [activeAlbum, setActiveAlbum] = useState(null);
 
   const albums = [
+     {
+      title: "Prayer Conference - El Ruach",
+      date: "December 2nd, 2025",
+      cover: "/gallery/PC11.jpg",
+      link: "https://petra2360.pixieset.com/sunday/",
+    },
     {
       title: "DAY 4",
       date: "April 20th, 2025",

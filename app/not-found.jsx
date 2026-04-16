@@ -28,7 +28,11 @@ export default function NotFound() {
           Oops! The page you are looking for cannot be found.
           <br />
           It might have been moved or no longer exists.
-        </p>
+        </p> <br />
+        <p className="text-lg text-red-700">
+        JESUS LOVES YOU
+        </p> <br />
+
 
         {/* Button */}
         <Link

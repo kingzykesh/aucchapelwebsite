@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import GoogleAd from "@/components/GoogleAd";
 
 export default function PrayerRequestPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE;

@@ -66,7 +66,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center gap-4 mb-6">
            
             <motion.a
-              href="/sermon"
+              href="/sermons"
               whileHover={{ scale: 1.04, boxShadow: "0 0 25px rgba(59,130,246,0.7)" }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-900 font-semibold shadow-lg"
